@@ -1,0 +1,25 @@
+<div class="bg-slate-100 p-4 rounded-lg shadow-lg mb-8 ml-8">
+  <h1 class="text-2xl font-semibold mb-2"><%= @title %></h1>
+  <div class="flex flex-col">
+    <div class="text-xl font-semibold mr-4">
+      Current Weather in <%= address_string %>
+    </div>
+    <div class="text-xl font-semibold mr-4">
+      <%= date %>
+    </div>
+    <div class="text-xl font-semibold mr-4">
+      Current Temp: <%= current_temp %>°F
+    </div>
+  </div>
+  <div class="text-xl font-semibold mr-4">
+    High: <%= temp_high %>°F
+  </div>
+  <div class="text-xl font-semibold mr-4">
+    Low: <%= temp_low %>°F
+  </div>
+  <% if cached %>
+  <div class="text-xl font-semibold mr-4 bg-green-300">
+    Cached
+  </div>
+  <% end %>
+</div>

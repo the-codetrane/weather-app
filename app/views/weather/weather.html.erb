@@ -1,0 +1,41 @@
+<div class="flex flex-col">
+  <div class="mx-auto">
+    <h1 class="text-8xl mb-12">WEATHER NOW</h1>
+  </div>
+  <div class="mx-auto">
+    <%= form_tag(current_weather_path) do %>
+      <div class="mb-4">
+        <%= label_tag :city, nil, class: 'block text-gray-600 font-semibold' %>
+        <%= text_field_tag :city, nil, class: 'form-input', required: true %>
+      </div>
+
+      <div class="mb-4">
+        <%= label_tag :state, nil, class: 'block text-gray-600 font-semibold' %>
+        <%= text_field_tag :state, nil, class: 'form-input',  required: true %>
+      </div>
+
+      <div class="mb-4">
+        <%= label_tag :zip, nil, class: 'block text-gray-600 font-semibold' %>
+        <%= text_field_tag :zip, nil, class: 'form-input',  required: true %>
+      </div>
+
+      <div class="mb-4">
+        <%= label_tag :country_code, nil, class: 'block text-gray-600 font-semibold' %>
+        <%= text_field_tag :country_code, nil, class: 'form-input',  required: true %>
+      </div>
+
+      <div class="mt-6">
+        <%= submit_tag "Current Weather", class: 'bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-700' %>
+        <%= submit_tag "Forecast", class: 'bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-300' %>
+      </div>
+    <% end %>
+  </div>
+</div>
+<div class="flex flex-row">
+  <div class="mt-12 w-1/2">
+    <%= turbo_frame_tag :current_weather %>
+  </div>
+  <div class="mt-12 w-1/2">
+    <%= turbo_frame_tag :forecast_weather %>
+  </div>
+</div>
